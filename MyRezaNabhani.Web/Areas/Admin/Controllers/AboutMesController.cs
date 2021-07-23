@@ -26,14 +26,14 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
 
 
         // GET: Admin/AboutMes
-        public async Task<IActionResult> Index()
+        public  IActionResult Index()
         {
-            var myNabhaniDbContext = _aboutMeRepository.GetAllAboutMes();
-            return View(myNabhaniDbContext);
+          
+            return View(_aboutMeRepository.GetAllAboutMes());
         }
 
         // GET: Admin/AboutMes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -96,7 +96,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            var aboutMe = _aboutMeRepository.GetAboutMeById(id.Value);
+            var aboutMe =  _aboutMeRepository.GetAboutMeById(id.Value);
             if (aboutMe == null)
             {
                 return NotFound();
@@ -111,10 +111,10 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,FullName,Age,Address,Email,Phone,Status,Description,Avatar,CreateDate")] AboutMe aboutMe, IFormFile imgup)
         {
-            if (id != aboutMe.ID)
-            {
-                return NotFound();
-            }
+            //if (id != aboutMe.ID)
+            //{
+            //    return NotFound();
+            //}
 
             if (ModelState.IsValid)
             {
@@ -131,10 +131,14 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
                         string savePath = Path.Combine(
                             Directory.GetCurrentDirectory(), "wwwroot/AboutImages", aboutMe.Avatar
                         );
-
+                        var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/AboutImages", aboutMe.Avatar);
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            System.IO.File.Delete(imagePath);
+                        }
                         using (var stream = new FileStream(savePath, FileMode.Create))
                         {
-                           await imgup.CopyToAsync(stream);
+                            await imgup.CopyToAsync(stream);
                         }
 
                     }

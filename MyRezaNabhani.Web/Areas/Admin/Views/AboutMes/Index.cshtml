@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Avatar)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.FullName)
             </th>
             <th>
@@ -34,9 +37,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Avatar)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.CreateDate)
             </th>
@@ -46,6 +47,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                <img src="/AboutImages/@item.Avatar" class="thumbnail" style="max-width: 120px" />
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FullName)
             </td>
@@ -67,9 +71,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
-                <img src="/AboutImages/@item.Avatar" class="thumbnail" style="max-width: 120px" />
-            </td>
+
             <td>
                 @item.CreateDate.ToShamsi()
             </td>
