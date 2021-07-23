@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRezaNabhani.Web", "MyRezaNabhani.Web\MyRezaNabhani.Web.csproj", "{79F6C55F-313F-40DC-9CE5-EB0215B673C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRezaNabhani.Web", "MyRezaNabhani.Web\MyRezaNabhani.Web.csproj", "{79F6C55F-313F-40DC-9CE5-EB0215B673C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRezaNabhani.DomainClasses", "MyRezaNabhani.DomainClasses\MyRezaNabhani.DomainClasses.csproj", "{C78C3BA0-E90B-4554-9F37-1576A5E9A8FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRezaNabhani.DomainClasses", "MyRezaNabhani.DomainClasses\MyRezaNabhani.DomainClasses.csproj", "{C78C3BA0-E90B-4554-9F37-1576A5E9A8FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRezaNabhani.DataLayer", "MyRezaNabhani.DataLayer\MyRezaNabhani.DataLayer.csproj", "{C1FB51C8-8067-4015-BCA7-F8DEC434917F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRezaNabhani.DataLayer", "MyRezaNabhani.DataLayer\MyRezaNabhani.DataLayer.csproj", "{C1FB51C8-8067-4015-BCA7-F8DEC434917F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRezaNabhani.Services", "MyRezaNabhani.Services\MyRezaNabhani.Services.csproj", "{47DEFC24-84D7-4A9C-AAC8-ACDA59BA723A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRezaNabhani.Services", "MyRezaNabhani.Services\MyRezaNabhani.Services.csproj", "{47DEFC24-84D7-4A9C-AAC8-ACDA59BA723A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRezaNabhani.ViewModels", "MyRezaNabhani.ViewModels\MyRezaNabhani.ViewModels.csproj", "{0F762EB1-3FCD-41EA-86CB-2BCBE2C375F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRezaNabhani.ViewModels", "MyRezaNabhani.ViewModels\MyRezaNabhani.ViewModels.csproj", "{0F762EB1-3FCD-41EA-86CB-2BCBE2C375F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRezaNabhani.Utilities", "MyRezaNabhani.Utilities\MyRezaNabhani.Utilities.csproj", "{2369D715-D004-4785-9CC2-DDA00E536434}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0F762EB1-3FCD-41EA-86CB-2BCBE2C375F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F762EB1-3FCD-41EA-86CB-2BCBE2C375F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F762EB1-3FCD-41EA-86CB-2BCBE2C375F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2369D715-D004-4785-9CC2-DDA00E536434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2369D715-D004-4785-9CC2-DDA00E536434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2369D715-D004-4785-9CC2-DDA00E536434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2369D715-D004-4785-9CC2-DDA00E536434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
