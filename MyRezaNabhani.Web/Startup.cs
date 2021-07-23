@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyRezaNabhani.DataLayer.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,10 @@ namespace MyRezaNabhani.Web
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddDbContext<MyRezaNabhaniDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("RezaNabhaniConnection"))
+
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
