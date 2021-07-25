@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyRezaNabhani.DomainClasses.AboutMe;
+using MyRezaNabhani.DomainClasses.SkillMe;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,5 +17,6 @@ namespace MyRezaNabhani.DataLayer.Context
 
 
         public DbSet<AboutMe> AboutMes { get; set; }
+        public DbSet<SkillMe> SkillMes { get; set; }
     }
 }

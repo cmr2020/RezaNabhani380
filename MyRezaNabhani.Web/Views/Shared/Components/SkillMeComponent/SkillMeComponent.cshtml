@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MyRezaNabhani.DomainClasses.SkillMe.SkillMe>
+
+<section class="pt-page" data-id="resume">
+    <div class="section-inner custom-page-content">
+        <div class="page-header color-1">
+            <h2>رزومه</h2>
+        </div>
+        <div class="page-content">
+
+
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="block">
+                        <div class="block-title">
+                            <h3>مهارت های <span>طراحی</span></h3>
+                        </div>
+
+                        <div class="skills-info">
+                            @foreach (var item in Model)
+                            {
+
+
+                                <h4>@item.SkillTitle </h4>
+                                <div class="skill-container">
+                                    <div class="skill-percentage" style="width:@item.AmountSkill"></div>
+                                </div>
+
+
+                            }
+                        </div>
+
+                    </div>
+                </div>
+
+          
+            </div>
+
+            <!-- Download Resume Button -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="block">
+                        <div class="center download-resume">
+                            <a href="#" class="btn btn-secondary">دریافت رزومه</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Download Resume Button -->
+
+        </div>
+    </div>
+</section>
