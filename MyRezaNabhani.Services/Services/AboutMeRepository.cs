@@ -61,5 +61,7 @@ namespace MyRezaNabhani.Services.Services
         {
             return _db.AboutMes.Any(p => p.ID == aboutId);
         }
+
+        
     }
 }

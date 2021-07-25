@@ -8,6 +8,7 @@ namespace MyRezaNabhani.Services.Repositories
     public interface IAboutMeRepository
     {
         List<AboutMe> GetAllAboutMes();
+      
         AboutMe GetAboutMeById(int aboutId);
         void InsertAboutMe(AboutMe aboutMe);
         void UpdateAboutMe(AboutMe aboutMe);
