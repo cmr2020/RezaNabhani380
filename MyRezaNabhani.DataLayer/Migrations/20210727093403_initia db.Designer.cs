@@ -10,8 +10,8 @@ using MyRezaNabhani.DataLayer.Context;
 namespace MyRezaNabhani.DataLayer.Migrations
 {
     [DbContext(typeof(MyRezaNabhaniDbContext))]
-    [Migration("20210725100618_SkillMe")]
-    partial class SkillMe
+    [Migration("20210727093403_initia db")]
+    partial class initiadb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
