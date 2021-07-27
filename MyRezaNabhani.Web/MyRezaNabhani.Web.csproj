@@ -9,6 +9,7 @@
     <ProjectReference Include="..\MyRezaNabhani.DomainClasses\MyRezaNabhani.DomainClasses.csproj" />
     <ProjectReference Include="..\MyRezaNabhani.Services\MyRezaNabhani.Services.csproj" />
     <ProjectReference Include="..\MyRezaNabhani.Utilities\MyRezaNabhani.Utilities.csproj" />
+    <ProjectReference Include="..\MyRezaNabhani.ViewModels\MyRezaNabhani.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>
