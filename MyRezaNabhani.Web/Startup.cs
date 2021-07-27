@@ -37,6 +37,7 @@ namespace MyRezaNabhani.Web
 
             services.AddTransient<IAboutMeRepository, AboutMeRepository>();
             services.AddTransient<ISkillMeRepository, SkillMeRepository>();
+            services.AddTransient<IContactUsRepository, ContactUsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
