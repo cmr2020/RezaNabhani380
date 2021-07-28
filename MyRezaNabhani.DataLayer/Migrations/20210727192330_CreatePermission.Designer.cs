@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyRezaNabhani.DataLayer.Context;
 
 namespace MyRezaNabhani.DataLayer.Migrations
 {
     [DbContext(typeof(MyRezaNabhaniDbContext))]
-    partial class MyRezaNabhaniDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210727192330_CreatePermission")]
+    partial class CreatePermission
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyRezaNabhani.DataLayer.Context;
 using MyRezaNabhani.DomainClasses.AboutMe;
+using MyRezaNabhani.Services;
 using MyRezaNabhani.Services.Repositories;
 
 namespace MyRezaNabhani.Web.Areas.Admin.Controllers
@@ -26,11 +27,13 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
 
 
         // GET: Admin/AboutMes
+        [PermissionChecker(15)]
         public  IActionResult Index()
         {
           
             return View(_aboutMeRepository.GetAllAboutMes());
         }
+
 
         // GET: Admin/AboutMes/Details/5
         public IActionResult Details(int? id)
@@ -50,7 +53,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(aboutMe);
         }
 
-        // GET: Admin/AboutMes/Create
+        [PermissionChecker(16)]      
         public IActionResult Create()
         {
             return View();
@@ -89,6 +92,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/AboutMes/Edit/5
+        [PermissionChecker(17)]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -163,6 +167,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/AboutMes/Delete/5
+        [PermissionChecker(18)]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

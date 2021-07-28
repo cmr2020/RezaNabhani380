@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyRezaNabhani.DataLayer.Context;
 using MyRezaNabhani.DomainClasses.SkillMe;
+using MyRezaNabhani.Services;
 using MyRezaNabhani.Services.Repositories;
 
 namespace MyRezaNabhani.Web.Areas.Admin.Controllers
@@ -21,6 +22,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             _skillMeRepository = skillMeRepository;
         }
 
+        [PermissionChecker(10)]
         // GET: Admin/SkillMes
         public async Task<IActionResult> Index()
         {
@@ -44,6 +46,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(skillMe);
         }
 
+        [PermissionChecker(11)]
         // GET: Admin/SkillMes/Create
         public IActionResult Create()
         {
@@ -66,6 +69,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(skillMe);
         }
 
+        [PermissionChecker(12)]
         // GET: Admin/SkillMes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -117,6 +121,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(skillMe);
         }
 
+        [PermissionChecker(13)]
         // GET: Admin/SkillMes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

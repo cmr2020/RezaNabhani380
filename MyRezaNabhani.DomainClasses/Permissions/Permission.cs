@@ -23,6 +23,5 @@ namespace MyRezaNabhani.DomainClasses.Permissions
 
         public List<RolePermission> RolePermissions { get; set; }
 
-
     }
 }

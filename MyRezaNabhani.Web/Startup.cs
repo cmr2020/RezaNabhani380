@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -35,10 +36,30 @@ namespace MyRezaNabhani.Web
 
             );
 
+            #region Authentication
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+
+            }).AddCookie(options =>
+            {
+                options.LoginPath = "/Login";
+                options.LogoutPath = "/Logout";
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(43200);
+
+            });
+
+            #endregion
+
+
             services.AddTransient<IAboutMeRepository, AboutMeRepository>();
             services.AddTransient<ISkillMeRepository, SkillMeRepository>();
             services.AddTransient<IContactUsRepository, ContactUsRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IPermissionRepository, PermissionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,10 +77,10 @@ namespace MyRezaNabhani.Web
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

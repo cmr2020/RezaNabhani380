@@ -39,44 +39,63 @@
         <!-- Header -->
         <header id="site_header" class="header mobile-menu-hide">
             <div class="header-content">
-                
-                    <div class="site-title-block mobile-hidden">
-                        <div class="site-title">رضا <span>نبهانی</span></div>
-                    </div>
-               
-                    <!-- Navigation -->
-                    <div class="site-nav">
-                        <!-- Main menu -->
-                        <ul id="nav" class="site-main-menu">
-                            <li>
-                                <a class="pt-trigger" href="#home">خانه</a><!-- href value = data-id without # of .pt-page. -->
-                            </li>
-                            <li>
-                                <a class="pt-trigger" href="#resume">رزومه</a>
-                            </li>
-                            <li>
-                                <a class="pt-trigger" href="#services">خدمات</a>
-                            </li>
-                            <li>
-                                <a class="pt-trigger" href="#portfolio">نمونه‌کارها</a>
-                            </li>
-                            <li>
-                                <a class="pt-trigger" href="#blog">بلاگ</a>
-                            </li>
-                            <li>
-                                <a class="pt-trigger" href="#contact">تماس</a>
-                            </li>
-                        </ul>
-                        <!-- /Main menu -->
-                    </div>
-                    <!-- Navigation -->
+
+                <div class="site-title-block mobile-hidden">
+                    <div class="site-title">رضا <span>نبهانی</span></div>
                 </div>
+
+                <!-- Navigation -->
+                <div class="site-nav">
+                    <!-- Main menu -->
+                    <ul id="nav" class="site-main-menu">
+                        <li>
+                            <a class="pt-trigger" href="#home">خانه</a><!-- href value = data-id without # of .pt-page. -->
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#resume">رزومه</a>
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#services">خدمات</a>
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#portfolio">نمونه‌کارها</a>
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#blog">بلاگ</a>
+                        </li>
+                        <li>
+                            <a class="pt-trigger" href="#contact">تماس</a>
+                        </li>
+                    </ul>
+                    <!-- /Main menu -->
+                </div>
+                <!-- Navigation -->
+            </div>
         </header>
 
-      
-              
 
-           
+
+        <div >
+            <div class="clientarea">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="loggein">
+                        <i class="zmdi zmdi-account"></i><a href=""> @User.Identity.Name ، خوش آمدی </a>
+                        /
+                        <a href="/Logout"> خروج </a>
+                    </div>
+                }
+                else
+                {
+                    <div class="signin">
+                        <i class="zmdi zmdi-account"></i>
+                        <a href="/Login"> ورود </a> /
+                        <a href="/Register"> عضویت </a>
+                    </div>
+                }
+
+            </div>
+
             <!-- /Header -->
             <!-- Mobile Header -->
             <div class="mobile-header mobile-visible">

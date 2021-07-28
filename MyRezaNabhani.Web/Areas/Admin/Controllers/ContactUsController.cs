@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyRezaNabhani.DataLayer.Context;
 using MyRezaNabhani.DomainClasses.ContactUs;
+using MyRezaNabhani.Services;
 
 namespace MyRezaNabhani.Web.Areas.Admin.Controllers
 {
@@ -20,6 +21,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             _context = context;
         }
 
+        [PermissionChecker(1)]
         // GET: Admin/ContactUs
         public async Task<IActionResult> Index()
         {
@@ -44,6 +46,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(contactUs);
         }
 
+        [PermissionChecker(7)]
         // GET: Admin/ContactUs/Create
         public IActionResult Create()
         {
@@ -66,6 +69,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(contactUs);
         }
 
+        [PermissionChecker(8)]
         // GET: Admin/ContactUs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -117,6 +121,7 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(contactUs);
         }
 
+        [PermissionChecker(9)]
         // GET: Admin/ContactUs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

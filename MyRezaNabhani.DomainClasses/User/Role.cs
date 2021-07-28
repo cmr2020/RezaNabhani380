@@ -20,6 +20,7 @@ namespace MyRezaNabhani.DomainClasses.User
         [MaxLength(200, ErrorMessage = "{0} نمی تواند بیشتر از {1} کاراکتر باشد .")]
         public string RoleTitle { get; set; }
 
+        public bool IsDelete { get; set; }
 
         #region Relations
 

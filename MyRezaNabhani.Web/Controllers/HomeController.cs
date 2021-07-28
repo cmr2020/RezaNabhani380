@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyRezaNabhani.DomainClasses.ContactUs;
 using MyRezaNabhani.Services.Repositories;
 using System;
@@ -23,7 +24,7 @@ namespace MyRezaNabhani.Web.Controllers
         {
             return View();
         }
-
+        [Authorize]
         [HttpGet("contact-us")]
         public async Task<IActionResult> ContactUs()
         {
