@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -27,7 +28,8 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
 
 
         // GET: Admin/AboutMes
-        [PermissionChecker(15)]
+        //[PermissionChecker(15)]
+        [Authorize]
         public  IActionResult Index()
         {
           
@@ -53,7 +55,8 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(aboutMe);
         }
 
-        [PermissionChecker(16)]      
+        //[PermissionChecker(16)]      
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -92,7 +95,8 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/AboutMes/Edit/5
-        [PermissionChecker(17)]
+        //[PermissionChecker(17)]
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -167,7 +171,8 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/AboutMes/Delete/5
-        [PermissionChecker(18)]
+        //[PermissionChecker(18)]
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

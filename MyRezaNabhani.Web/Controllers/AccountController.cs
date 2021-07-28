@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyRezaNabhani.DomainClasses.User;
 using MyRezaNabhani.Services.Generator;
@@ -25,6 +26,7 @@ namespace MyRezaNabhani.Web.Controllers
         }
 
         [Route("Register")]
+        [Authorize]
         public IActionResult Register()
         {
             return View();
@@ -128,6 +130,15 @@ namespace MyRezaNabhani.Web.Controllers
 
         #endregion
 
+        #region Logout
+        [Route("Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return Redirect("/Login");
+        }
+
+        #endregion
 
     }
 }

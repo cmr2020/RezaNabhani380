@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -22,8 +23,9 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             _skillMeRepository = skillMeRepository;
         }
 
-        [PermissionChecker(10)]
-        // GET: Admin/SkillMes
+
+        //[PermissionChecker(10)]
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View( _skillMeRepository.GetAllSkillMes());
@@ -46,7 +48,8 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(skillMe);
         }
 
-        [PermissionChecker(11)]
+        //[PermissionChecker(11)]
+        [Authorize]
         // GET: Admin/SkillMes/Create
         public IActionResult Create()
         {
@@ -69,8 +72,9 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(skillMe);
         }
 
-        [PermissionChecker(12)]
+        //[PermissionChecker(12)]
         // GET: Admin/SkillMes/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -121,8 +125,9 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(skillMe);
         }
 
-        [PermissionChecker(13)]
+        //[PermissionChecker(13)]
         // GET: Admin/SkillMes/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

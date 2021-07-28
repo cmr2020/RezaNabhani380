@@ -24,6 +24,8 @@ namespace MyRezaNabhani.Web.Controllers
         {
             return View();
         }
+
+
         [Authorize]
         [HttpGet("contact-us")]
         public async Task<IActionResult> ContactUs()

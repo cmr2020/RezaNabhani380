@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyRezaNabhani.DataLayer.Context;
 
 namespace MyRezaNabhani.DataLayer.Migrations
 {
     [DbContext(typeof(MyRezaNabhaniDbContext))]
-    partial class MyRezaNabhaniDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210728065343_change per")]
+    partial class changeper
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -201,9 +203,6 @@ namespace MyRezaNabhani.DataLayer.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -264,7 +263,7 @@ namespace MyRezaNabhani.DataLayer.Migrations
                         .IsRequired();
 
                     b.HasOne("MyRezaNabhani.DomainClasses.User.Role", "Role")
-                        .WithMany("RolePermissions")
+                        .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -302,8 +301,6 @@ namespace MyRezaNabhani.DataLayer.Migrations
 
             modelBuilder.Entity("MyRezaNabhani.DomainClasses.User.Role", b =>
                 {
-                    b.Navigation("RolePermissions");
-
                     b.Navigation("UserRoles");
                 });
 

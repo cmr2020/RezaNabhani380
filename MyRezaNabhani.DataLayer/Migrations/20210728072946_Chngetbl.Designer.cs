@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyRezaNabhani.DataLayer.Context;
 
 namespace MyRezaNabhani.DataLayer.Migrations
 {
     [DbContext(typeof(MyRezaNabhaniDbContext))]
-    partial class MyRezaNabhaniDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210728072946_Chngetbl")]
+    partial class Chngetbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,9 +201,6 @@ namespace MyRezaNabhani.DataLayer.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
                     b.Property<string>("Password")

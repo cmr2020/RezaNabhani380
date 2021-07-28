@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -21,8 +22,9 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             _context = context;
         }
 
-        [PermissionChecker(1)]
+        //[PermissionChecker(1)]
         // GET: Admin/ContactUs
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await _context.ContactUses.ToListAsync());
@@ -46,8 +48,9 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(contactUs);
         }
 
-        [PermissionChecker(7)]
+        //[PermissionChecker(7)]
         // GET: Admin/ContactUs/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -69,8 +72,9 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(contactUs);
         }
 
-        [PermissionChecker(8)]
+        //[PermissionChecker(8)]
         // GET: Admin/ContactUs/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -121,8 +125,9 @@ namespace MyRezaNabhani.Web.Areas.Admin.Controllers
             return View(contactUs);
         }
 
-        [PermissionChecker(9)]
+        //[PermissionChecker(9)]
         // GET: Admin/ContactUs/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

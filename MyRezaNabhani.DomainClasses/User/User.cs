@@ -45,10 +45,13 @@ namespace MyRezaNabhani.DomainClasses.User
         [Display(Name = "تاریخ ثبت نام")]
         public DateTime RegisterDate { get; set; }
 
+        public bool IsDelete { get; set; }
+
 
         #region Relations
 
         public virtual List<UserRole> UserRoles { get; set; }
+       
 
         #endregion
 
