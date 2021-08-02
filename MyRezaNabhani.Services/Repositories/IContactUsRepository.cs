@@ -1,4 +1,5 @@
 ﻿using MyRezaNabhani.DomainClasses.ContactUs;
+using MyRezaNabhani.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +12,7 @@ namespace MyRezaNabhani.Services.Repositories
 
         Task CreateContactUs(ContactUs contactUs, string userIp);
 
+        IEnumerable<ContactUsViewModel> GetInformationMaster();
 
     }
 }
