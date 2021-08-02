@@ -40,7 +40,9 @@
                 @Html.DisplayFor(modelItem => item.Subject)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Text)
+           
+                <textarea style="width:200px;height:100px">@item.Text</textarea>
+            
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

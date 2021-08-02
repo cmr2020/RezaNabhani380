@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Chat";
+}
+
+@section Scripts
+{
+    <script src="~/js/Chat.js"></script>
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="chatDialog" title="Chat With Support">
+    <div id="chatMainPanel">
+        <ul id="chatHistory"></ul>
+        <div id="bottomPanel">
+            <div class="row">
+                <form id="chatForm">
+                    <div class="col-md-8">
+                        <input id="messageTextBox" class="form-control" type="text" placeholder="Type a Message" />
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="btn btn-success" value="Send" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

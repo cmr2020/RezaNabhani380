@@ -26,6 +26,12 @@ namespace MyRezaNabhani.Web.Controllers
         }
 
 
+        public IActionResult Chat()
+        {
+            return View();
+        }
+
+
         [Authorize]
         [HttpGet("contact-us")]
         public async Task<IActionResult> ContactUs()
@@ -42,7 +48,7 @@ namespace MyRezaNabhani.Web.Controllers
                 var ip = HttpContext.Connection.RemoteIpAddress.ToString();
                 await _contactUsRepository.CreateContactUs(contactUs,ip);
                 TempData[SuccessMessage] = "پیام شما با موفقیت ارسال شد";
-                return RedirectToAction("ContactUs");
+                return RedirectToAction("");
             }
             return View();
         }

@@ -15,6 +15,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
+
 namespace MyRezaNabhani.Web
 {
     public class Startup
@@ -55,11 +57,16 @@ namespace MyRezaNabhani.Web
             #endregion
 
 
+            #region IoC
             services.AddTransient<IAboutMeRepository, AboutMeRepository>();
             services.AddTransient<ISkillMeRepository, SkillMeRepository>();
             services.AddTransient<IContactUsRepository, ContactUsRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IPermissionRepository, PermissionRepository>();
+            #endregion
+
+            services.AddSignalR();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -82,6 +89,11 @@ namespace MyRezaNabhani.Web
             app.UseAuthentication();
             app.UseRouting();
             app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapHub<ChatHub>("/chatHub");
+            });
 
             app.UseEndpoints(endpoints =>
             {
