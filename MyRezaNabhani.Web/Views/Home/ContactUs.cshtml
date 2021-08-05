@@ -1,4 +1,4 @@
-﻿@model MyRezaNabhani.DomainClasses.ContactUs.ContactUs
+﻿@model MyRezaNabhani.ViewModels.ContactUsViewModel
 
 
 <section class="pt-page" data-id="contact">
@@ -23,7 +23,7 @@
                             <i class="fa fa-map-marker"></i>
                         </div>
                         <div class="ci-text">
-                            <p><!--آدرس--></p>
+                            <p>@Model.Address<!--آدرس--></p>
                         </div>
                     </div>
                     <div class="contact-info-block">
@@ -31,7 +31,7 @@
                             <i class="fa fa-envelope"></i>
                         </div>
                         <div class="ci-text">
-                            <p><span class="ltr_text"><!--ایمیل مدرس--></span></p>
+                            <p><span class="ltr_text">@Model.EmailMaster <!--ایمیل مدرس--></span></p>
                         </div>
                     </div>
                     <div class="contact-info-block">
@@ -39,7 +39,7 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="ci-text">
-                            <p><span class="ltr_text"><!--تلفن--></span></p>
+                            <p><span class="ltr_text">@Model.Phone<!--تلفن--></span></p>
                         </div>
                     </div>
                     <div class="contact-info-block">

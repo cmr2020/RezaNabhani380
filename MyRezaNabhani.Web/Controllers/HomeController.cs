@@ -19,7 +19,7 @@ namespace MyRezaNabhani.Web.Controllers
         }
 
 
- 
+        
         public IActionResult Index()
         {
             return View();
@@ -40,13 +40,13 @@ namespace MyRezaNabhani.Web.Controllers
         }
 
 
-        [HttpPost("contact-us"),ValidateAntiForgeryToken]
+        [HttpPost("contact-us"), ValidateAntiForgeryToken]
         public async Task<IActionResult> ContactUs(ContactUs contactUs)
         {
             if (ModelState.IsValid)
             {
                 var ip = HttpContext.Connection.RemoteIpAddress.ToString();
-                await _contactUsRepository.CreateContactUs(contactUs,ip);
+                await _contactUsRepository.CreateContactUs(contactUs, ip);
                 TempData[SuccessMessage] = "پیام شما با موفقیت ارسال شد";
                 return RedirectToAction("");
             }
